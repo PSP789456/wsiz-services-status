@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+
         Button bWU = findViewById(R.id.bWU);
         bWU.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +45,24 @@ public class MainActivity extends AppCompatActivity {
 
         Button bFTP = findViewById(R.id.bFTP);
         bFTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FTPActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button bWSIZ = findViewById(R.id.bWSIZ);
+        bWSIZ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FTPActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button bKandydaci = findViewById(R.id.bKandydaci);
+        bKandydaci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FTPActivity.class);

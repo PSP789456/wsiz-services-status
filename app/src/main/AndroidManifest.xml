@@ -29,7 +29,9 @@
         </activity>
         <activity android:name=".Activities.WUActivity" />
         <activity android:name=".Activities.BBActivity" />
-        <activity android:name=".Activities.FTPActivity"></activity>
+        <activity android:name=".Activities.FTPActivity" />
+        <activity android:name=".Activities.WSIZActivity" />
+        <activity android:name=".Activities.KandydaciActivity"></activity>
     </application>
 
 </manifest>
