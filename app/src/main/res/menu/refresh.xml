@@ -5,5 +5,5 @@
         android:id= "@+id/menuRefresh"
         android:icon= "@drawable/ic_action_refresh"
         app:showAsAction= "always"
-        android:title="@string/refresh1" />
+        android:title="@string/refresh" />
 </menu>

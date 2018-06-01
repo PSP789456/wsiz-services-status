@@ -1,4 +1,4 @@
-package name.observer.wsiizservicesstate.Activities;
+package name.observer.wsizserversstatus.Activities;
 
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -7,13 +7,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,12 +20,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import name.observer.wsiizservicesstate.R;
+import name.observer.wsizserversstatus.R;
 
-public class WUActivity extends AppCompatActivity {
+public class FTPActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +31,9 @@ public class WUActivity extends AppCompatActivity {
         setContentView(R.layout.activities);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Stan Wirtualnej Uczelni");
+        getSupportActionBar().setTitle("State of FTP server");
 
-        new JSONTask().execute("https://observer.name/api/wsiz");
+        new FTPActivity.JSONTask().execute("https://observer.name/api/wsiz");
     }
 
     public void Update() {
@@ -46,7 +42,7 @@ public class WUActivity extends AppCompatActivity {
         ProgressBar Spinner = findViewById(R.id.progressBar);
         Spinner.setVisibility(View.VISIBLE);
 
-        new WUActivity.JSONTask().execute("https://observer.name/api/wsiz");
+        new FTPActivity.JSONTask().execute("https://observer.name/api/wsiz");
     }
 
     @Override
@@ -68,7 +64,7 @@ public class WUActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id. menuRefresh :
                 Update();
-                return true;
+                return true ;
             default :
                 return super .onOptionsItemSelected(item);
         }
@@ -100,7 +96,7 @@ public class WUActivity extends AppCompatActivity {
                 String finalJson = buffer.toString();
 
                 JSONObject parentObject = new JSONObject(finalJson);
-                JSONObject parentArray = parentObject.getJSONObject("wu");
+                JSONObject parentArray = parentObject.getJSONObject("ftp");
                 String Status = parentArray.getString("status");
                 int Uptime = parentArray.getInt("uptime");
 
@@ -114,8 +110,8 @@ public class WUActivity extends AppCompatActivity {
                 int days = hours / Hours_In_A_Day;
                 hours -= days * Hours_In_A_Day;
 
-                return Status.toString() + "\n\n" + days + " days " + hours + " hours " + minutes + " minutes " + Uptime + " seconds";
-                //return (new SimpleDateFormat("HH 'hours', mm 'mins,' ss 'seconds'")).format(new Date(Uptime));
+                return Status.toString() + "\n\nServer Uptime:\n" + days + " days " + hours + " hours " + minutes + " minutes " + Uptime + " seconds";
+
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="name.observer.wsiizservicesstate">
+    package="name.observer.wsizserversstatus">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,21 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name="name.observer.wsizserversstatus.SplashActivity"
             android:theme="@style/SplashTheme">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="name.observer.wsizserversstatus.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.WUActivity" />
-        <activity android:name=".Activities.BBActivity" />
-        <activity android:name=".Activities.FTPActivity" />
-        <activity android:name=".Activities.WSIZActivity" />
-        <activity android:name=".Activities.KandydaciActivity"></activity>
+        <activity android:name="name.observer.wsizserversstatus.Activities.WUActivity" />
+        <activity android:name="name.observer.wsizserversstatus.Activities.BBActivity" />
+        <activity android:name="name.observer.wsizserversstatus.Activities.FTPActivity" />
+        <activity android:name="name.observer.wsizserversstatus.Activities.WSIZActivity" />
+        <activity android:name="name.observer.wsizserversstatus.Activities.KandydaciActivity"></activity>
     </application>
 
 </manifest>

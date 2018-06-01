@@ -1,4 +1,4 @@
-package name.observer.wsiizservicesstate.Activities;
+package name.observer.wsizserversstatus.Activities;
 
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -21,9 +21,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import name.observer.wsiizservicesstate.R;
+import name.observer.wsizserversstatus.R;
 
-public class KandydaciActivity extends AppCompatActivity {
+public class WUActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,9 @@ public class KandydaciActivity extends AppCompatActivity {
         setContentView(R.layout.activities);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Stan strony Kandydaci");
+        getSupportActionBar().setTitle("State of Virtual University");
 
-        new KandydaciActivity.JSONTask().execute("https://observer.name/api/wsiz");
+        new JSONTask().execute("https://observer.name/api/wsiz");
     }
 
     public void Update() {
@@ -42,7 +42,7 @@ public class KandydaciActivity extends AppCompatActivity {
         ProgressBar Spinner = findViewById(R.id.progressBar);
         Spinner.setVisibility(View.VISIBLE);
 
-        new KandydaciActivity.JSONTask().execute("https://observer.name/api/wsiz");
+        new WUActivity.JSONTask().execute("https://observer.name/api/wsiz");
     }
 
     @Override
@@ -96,7 +96,7 @@ public class KandydaciActivity extends AppCompatActivity {
                 String finalJson = buffer.toString();
 
                 JSONObject parentObject = new JSONObject(finalJson);
-                JSONObject parentArray = parentObject.getJSONObject("kandydaci");
+                JSONObject parentArray = parentObject.getJSONObject("wu");
                 String Status = parentArray.getString("status");
                 int Uptime = parentArray.getInt("uptime");
 
@@ -110,7 +110,7 @@ public class KandydaciActivity extends AppCompatActivity {
                 int days = hours / Hours_In_A_Day;
                 hours -= days * Hours_In_A_Day;
 
-                return Status.toString() + "\n\n" + days + " days " + hours + " hours " + minutes + " minutes " + Uptime + " seconds";
+                return Status.toString() + "\n\nServer Uptime:\n" + days + " days " + hours + " hours " + minutes + " minutes " + Uptime + " seconds";
                 //return (new SimpleDateFormat("HH 'hours', mm 'mins,' ss 'seconds'")).format(new Date(Uptime));
             } catch (MalformedURLException e) {
                 e.printStackTrace();

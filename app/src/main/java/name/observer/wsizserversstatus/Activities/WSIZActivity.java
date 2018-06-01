@@ -1,4 +1,4 @@
-package name.observer.wsiizservicesstate.Activities;
+package name.observer.wsizserversstatus.Activities;
 
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -22,9 +21,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import name.observer.wsiizservicesstate.R;
+import name.observer.wsizserversstatus.R;
 
-public class BBActivity extends AppCompatActivity {
+public class WSIZActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +31,9 @@ public class BBActivity extends AppCompatActivity {
         setContentView(R.layout.activities);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Stan Blackboard'a");
+        getSupportActionBar().setTitle("State of general page");
 
-        new JSONTask().execute("https://observer.name/api/wsiz");
+        new WSIZActivity.JSONTask().execute("https://observer.name/api/wsiz");
     }
 
     public void Update() {
@@ -43,7 +42,7 @@ public class BBActivity extends AppCompatActivity {
         ProgressBar Spinner = findViewById(R.id.progressBar);
         Spinner.setVisibility(View.VISIBLE);
 
-        new BBActivity.JSONTask().execute("https://observer.name/api/wsiz");
+        new WSIZActivity.JSONTask().execute("https://observer.name/api/wsiz");
     }
 
     @Override
@@ -97,7 +96,7 @@ public class BBActivity extends AppCompatActivity {
                 String finalJson = buffer.toString();
 
                 JSONObject parentObject = new JSONObject(finalJson);
-                JSONObject parentArray = parentObject.getJSONObject("bb");
+                JSONObject parentArray = parentObject.getJSONObject("wsiz");
                 String Status = parentArray.getString("status");
                 int Uptime = parentArray.getInt("uptime");
 
@@ -111,7 +110,7 @@ public class BBActivity extends AppCompatActivity {
                 int days = hours / Hours_In_A_Day;
                 hours -= days * Hours_In_A_Day;
 
-                return Status.toString() + "\n\n" + days + " days " + hours + " hours " + minutes + " minutes " + Uptime + " seconds";
+                return Status.toString() + "\n\nServer Uptime:\n" + days + " days " + hours + " hours " + minutes + " minutes " + Uptime + " seconds";
                 //return (new SimpleDateFormat("HH 'hours', mm 'mins,' ss 'seconds'")).format(new Date(Uptime));
             } catch (MalformedURLException e) {
                 e.printStackTrace();

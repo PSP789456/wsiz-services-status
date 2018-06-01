@@ -1,11 +1,9 @@
 <resources>
-    <string name="app_name">WSIiZ Services State</string>
-    <string name="WU">Wirtualna Uczelnia</string>
+    <string name="app_name">WSIiZ Servers Status</string>
+    <string name="WU">Virtual University</string>
     <string name="BB">Blackboard</string>
     <string name="FTP">FTP</string>
     <string name="refresh">Refresh</string>
-    <string name="refresh1">Refresh1</string>
-    <string name="WSIZ">Strona główna WSIiZ</string>
     <string name="Kandydaci">Kandydaci</string>
-    <string name="WSIIZ">Strona główna</string>
+    <string name="WSIIZ">General page</string>
 </resources>

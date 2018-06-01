@@ -1,20 +1,17 @@
-package name.observer.wsiizservicesstate;
+package name.observer.wsizserversstatus;
 
 import android.app.ActionBar;
-import android.app.Notification;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import name.observer.wsiizservicesstate.Activities.BBActivity;
-import name.observer.wsiizservicesstate.Activities.FTPActivity;
-import name.observer.wsiizservicesstate.Activities.KandydaciActivity;
-import name.observer.wsiizservicesstate.Activities.WSIZActivity;
-import name.observer.wsiizservicesstate.Activities.WUActivity;
+import name.observer.wsizserversstatus.Activities.BBActivity;
+import name.observer.wsizserversstatus.Activities.FTPActivity;
+import name.observer.wsizserversstatus.Activities.KandydaciActivity;
+import name.observer.wsizserversstatus.Activities.WSIZActivity;
+import name.observer.wsizserversstatus.Activities.WUActivity;
 
 public class MainActivity extends AppCompatActivity {
 

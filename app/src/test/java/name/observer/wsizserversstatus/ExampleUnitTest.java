@@ -1,4 +1,4 @@
-package name.observer.wsiizservicesstate;
+package name.observer.wsizserversstatus;
 
 import org.junit.Test;
 
