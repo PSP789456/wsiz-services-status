@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WSIiZ Services State</string>
+    <string name="WU">Wirtualna Uczelnia</string>
+    <string name="BB">Blackboard</string>
+    <string name="FTP">FTP</string>
+    <string name="refresh">Refresh</string>
+    <string name="refresh1">Refresh1</string>
+</resources>
