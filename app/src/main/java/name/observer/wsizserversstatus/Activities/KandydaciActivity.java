@@ -21,6 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import name.observer.wsizserversstatus.Helpers.CheckNetwork;
 import name.observer.wsizserversstatus.R;
 
 public class KandydaciActivity extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class KandydaciActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("State of Kandydaci page");
 
-        new KandydaciActivity.JSONTask().execute("https://observer.name/api/wsiz");
+        Update();
     }
 
     public void Update() {
@@ -42,7 +43,13 @@ public class KandydaciActivity extends AppCompatActivity {
         ProgressBar Spinner = findViewById(R.id.progressBar);
         Spinner.setVisibility(View.VISIBLE);
 
-        new KandydaciActivity.JSONTask().execute("https://observer.name/api/wsiz");
+        if (CheckNetwork.isInternetAvailable(KandydaciActivity.this)) {
+            new KandydaciActivity.JSONTask().execute("https://observer.name/api/wsiz");
+        } else {
+            Data.setText("No internet connection.");
+            Spinner.setVisibility(View.GONE);
+            Data.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
