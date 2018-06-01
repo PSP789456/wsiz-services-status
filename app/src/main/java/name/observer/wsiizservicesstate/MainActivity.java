@@ -12,6 +12,8 @@ import android.widget.Button;
 
 import name.observer.wsiizservicesstate.Activities.BBActivity;
 import name.observer.wsiizservicesstate.Activities.FTPActivity;
+import name.observer.wsiizservicesstate.Activities.KandydaciActivity;
+import name.observer.wsiizservicesstate.Activities.WSIZActivity;
 import name.observer.wsiizservicesstate.Activities.WUActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         bWSIZ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FTPActivity.class);
+                Intent intent = new Intent(MainActivity.this, WSIZActivity.class);
                 startActivity(intent);
             }
         });
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         bKandydaci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FTPActivity.class);
+                Intent intent = new Intent(MainActivity.this, KandydaciActivity.class);
                 startActivity(intent);
             }
         });
