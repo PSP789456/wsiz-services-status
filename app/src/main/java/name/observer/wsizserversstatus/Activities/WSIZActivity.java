@@ -32,7 +32,7 @@ public class WSIZActivity extends AppCompatActivity {
         setContentView(R.layout.activities);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("State of general page");
+        getSupportActionBar().setTitle("State of main page");
 
         Update();
     }
