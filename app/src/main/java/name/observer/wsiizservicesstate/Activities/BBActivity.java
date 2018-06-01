@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -37,6 +38,11 @@ public class BBActivity extends AppCompatActivity {
     }
 
     public void Update() {
+        TextView Data = findViewById(R.id. ShowData);
+        Data.setVisibility(View.GONE);
+        ProgressBar Spinner = findViewById(R.id.progressBar);
+        Spinner.setVisibility(View.VISIBLE);
+
         new BBActivity.JSONTask().execute("https://observer.name/api/wsiz");
     }
 
@@ -131,8 +137,12 @@ public class BBActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            TextView ShowData = findViewById(R.id. ShowData);
-            ShowData.setText(result);
+            TextView Data = findViewById(R.id. ShowData);
+            Data.setText(result);
+
+            ProgressBar Spinner = findViewById(R.id.progressBar);
+            Spinner.setVisibility(View.GONE);
+            Data.setVisibility(View.VISIBLE);
         }
     }
 }
