@@ -16,13 +16,13 @@
         <activity
             android:name="name.observer.wsizserversstatus.SplashActivity"
             android:theme="@style/SplashTheme">
-        </activity>
-        <activity android:name="name.observer.wsizserversstatus.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="name.observer.wsizserversstatus.MainActivity">
         </activity>
         <activity android:name="name.observer.wsizserversstatus.Activities.WUActivity" />
         <activity android:name="name.observer.wsizserversstatus.Activities.BBActivity" />
