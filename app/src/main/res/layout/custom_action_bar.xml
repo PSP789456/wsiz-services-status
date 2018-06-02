@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="State of WSIiZ University Servers"
+        android:text="WSIiZ Services Status"
         android:textColor="#ffffff"
         android:id="@+id/action_bar_title"
         android:textStyle="bold"

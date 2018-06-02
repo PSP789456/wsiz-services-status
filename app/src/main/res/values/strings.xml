@@ -2,8 +2,9 @@
     <string name="app_name">WSIiZ Servers Status</string>
     <string name="WU">Virtual University</string>
     <string name="BB">Blackboard</string>
-    <string name="FTP">FTP</string>
+    <string name="FTP">FTP Server</string>
     <string name="refresh">Refresh</string>
     <string name="Kandydaci">Kandydaci</string>
-    <string name="WSIIZ">WSIiZ Main Page</string>
+    <string name="WSIIZ">WSIZ Main Page</string>
+    <string name="BUS">WSIZBus Schedule</string>
 </resources>
