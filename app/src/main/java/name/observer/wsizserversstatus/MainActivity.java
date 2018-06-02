@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +28,7 @@ import name.observer.wsizserversstatus.Activities.FTPActivity;
 import name.observer.wsizserversstatus.Activities.KandydaciActivity;
 import name.observer.wsizserversstatus.Activities.WSIZActivity;
 import name.observer.wsizserversstatus.Activities.WUActivity;
+import name.observer.wsizserversstatus.Helpers.CheckNetwork;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,12 +85,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button bBUS = findViewById(R.id.bBUS);
+        final Button bBUS = findViewById(R.id.bBUS);
         bBUS.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+            if (CheckNetwork.isInternetAvailable(MainActivity.this)) {
+                bBUS.setText(R.string.BUS);
                 new MainActivity.JSONTask().execute("https://observer.name/api/wsiz");
+            } else {
+                bBUS.setText("No internet");
+            }
             }
         });
     }
