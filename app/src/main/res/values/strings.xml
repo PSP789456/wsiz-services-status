@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WSIiZ Servers Status</string>
+    <string name="app_name">WSIiZ Services Status</string>
     <string name="WU">Virtual University</string>
     <string name="BB">Blackboard</string>
     <string name="FTP">FTP Server</string>

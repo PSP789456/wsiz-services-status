@@ -14,7 +14,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:width="5dp"
-        android:background="@drawable/custom_button_style"
+        android:background="@layout/custom_button_style"
         android:text="@string/WU"
         android:textSize="30sp"
         android:textColor="@color/White"/>
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/custom_button_style"
+        android:background="@layout/custom_button_style"
         android:text="@string/BB"
         android:textSize="30sp"
         android:textColor="@color/White"/>
@@ -35,7 +35,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/FTP"
-        android:background="@drawable/custom_button_style"
+        android:background="@layout/custom_button_style"
         android:visibility="visible"
         android:textSize="30sp"
         android:textColor="@color/White"/>
@@ -46,7 +46,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/WSIIZ"
-        android:background="@drawable/custom_button_style"
+        android:background="@layout/custom_button_style"
         android:visibility="visible"
         android:textSize="30sp"
         android:textColor="@color/White"/>
@@ -57,7 +57,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/Kandydaci"
-        android:background="@drawable/custom_button_style"
+        android:background="@layout/custom_button_style"
         android:visibility="visible"
         android:textSize="30sp"
         android:textColor="@color/White"/>
@@ -68,7 +68,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/BUS"
-        android:background="@drawable/custom_button_style"
+        android:background="@layout/custom_button_style"
         android:visibility="visible"
         android:textSize="30sp"
         android:textColor="@color/White"/>
